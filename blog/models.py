@@ -10,6 +10,10 @@ class BlogAuthor(models.Model):
 
     class Meta:
         ordering = ["user", "bio"]
+
+    def get_absolute_url(self):
+        """Returns the url to access a detail record for this book."""
+        return reverse('authors', args=[str(self.id)])
     
     def __str__(self):
         """
@@ -28,6 +32,10 @@ class Blog(models.Model):
     class Meta:
         ordering = ['title', 'post_date']
 
+    def get_absolute_url(self):
+        """Returns the url to access a detail record for this book."""
+        return reverse('blog', args=[str(self.id)])
+
     def __str__(self):
         return self.title
 
@@ -42,6 +50,11 @@ class BlogComment(models.Model):
 
     class Meta:
         ordering = ['post_date']
+
+
+    def get_absolute_url(self):
+        """Returns the url to access a detail record for this book."""
+        return reverse('blog-comment', args=[str(self.id)])
 
     def __str__(self):
 
