@@ -1,10 +1,12 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
-<section class="mw5 mw7-ns baskerville center pa3 ph5-ns">
-        <h1 class="mt0">Content to be added later</h1>
-        <p class="lh-copy measure roboto">
-          More stuff to be added here. Trying tachyons.
-        </p>
-      </section>
+<div class='flex items-center justify-center f3 avenir pa3'>
+    <p>Welcome to my <em>Django Blog</em>, a very basic blog created 
+    following the steps of the MDN django tutorial.</p>
+</div>
+<div class="tc pa4">
+    {% load static %}
+     <img src="{% static "otter.jpg" %}" alt="Otter" class="br4 ba bw2">
+ </div> 
 {% endblock %}
